@@ -922,17 +922,11 @@
       window.open(CONFIG.GOOGLE_FORM_URL, '_blank', 'noopener');
     }
 
-    /* ---- Sticky CTA branch ---- */
+    /* ---- Sticky CTA ---- */
     function handleStickyClick() {
       if (isEnded()) return;
-      const howSection = document.getElementById('how');
-      const howTop = howSection.getBoundingClientRect().top + window.scrollY;
-      if (window.scrollY < howTop - 100) {
-        scrollToHow();
-        gtag('event', 'cta_click_sticky', { action: 'scroll_to_how' });
-      } else {
-        openForm('sticky');
-      }
+      scrollToHow();
+      gtag('event', 'cta_click_sticky', { action: 'scroll_to_how' });
     }
 
     /* ---- Scroll Depth ---- */
