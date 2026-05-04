@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>나의 PT 트레이너 자랑하기 EVENT | 버핏그라운드</title>
+  <meta name="description" content="버핏그라운드 PT 회원만을 위한 한정 이벤트. 진심 담긴 리뷰로 트레이너에게 응원을 전하세요." />
+
+  <!-- OG -->
+  <meta property="og:title" content="나의 PT 트레이너 자랑하기 EVENT" />
+  <meta property="og:description" content="진심 담긴 리뷰로 트레이너에게 응원을 전하면, 추첨을 통해 네이버페이 포인트를 드려요." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero-photo.jpg" />
+
+  <!-- Pretendard -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <style>
+    :root {
+      --c-bg: #0D0D0E;
+      --c-surface: #1C1C20;
+      --c-surface-2: #23232A;
+      --c-green: #00D857;
+      --c-green-soft: rgba(0,216,87,0.12);
+      --c-text: #FFFFFF;
+      --c-text-mute: rgba(255,255,255,0.65);
+      --c-text-faint: rgba(255,255,255,0.45);
+      --c-border: rgba(255,255,255,0.08);
+      --r-sm: 8px;
+      --r-md: 12px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      letter-spacing: -0.02em;
+    }
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+      position: relative;
+    }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; border: 0; background: 0; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* === Header === */
+    .header {
+      position: sticky; top: 0; z-index: 50;
+      height: 56px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(13,13,14,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .header img { height: 22px; }
+
+    /* === Hero === */
+    .hero {
+      position: relative;
+      padding: 32px 24px 56px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(0,216,87,0.18), transparent 65%),
+        var(--c-bg);
+    }
+    .hero-photo-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: 0 0 60px rgba(0,216,87,0.15);
+    }
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.92);
+    }
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(13,13,14,0.6) 100%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 4px;
+      background: var(--c-green);
+      color: #000;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+      text-shadow: 0 0 40px rgba(0,216,87,0.25);
+    }
+    .hero-title .green { color: var(--c-green); }
+    .hero-period {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-text);
+      margin-bottom: 16px;
+      padding: 10px 0;
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+      letter-spacing: 0.01em;
+    }
+    .hero-period .dot { color: var(--c-green); margin: 0 6px; }
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--c-text-mute);
+      margin-bottom: 28px;
+    }
+    .hero-sub strong { color: var(--c-text); font-weight: 700; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 14px 22px;
+      background: var(--c-green);
+      color: #000;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* === Section Common === */
+    section { padding: 56px 24px; }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--c-green);
+      margin-bottom: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.32;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+    .section-title .green { color: var(--c-green); }
+    .section-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--c-text-mute);
+      margin-bottom: 28px;
+    }
+
+    /* === Section: Anchor === */
+    .anchor-card {
+      background: var(--c-surface);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      margin-bottom: 12px;
+      border: 1px solid var(--c-border);
+    }
+    .anchor-card .q {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--c-green);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .anchor-card .a {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--c-text);
+    }
+
+    /* === Section: Social Proof === */
+    .proof-scroll {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 4px 24px 8px;
+      margin: 0 -24px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .proof-scroll::-webkit-scrollbar { display: none; }
+    .proof-card {
+      flex: 0 0 78%;
+      scroll-snap-align: center;
+      background: var(--c-surface);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+    }
+    .proof-card img {
+      width: 100%;
+      aspect-ratio: 9/14;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* === Section: How (Step) === */
+    .step-list { display: flex; flex-direction: column; gap: 14px; }
+    .step-card {
+      background: var(--c-surface);
+      border-radius: var(--r-lg);
+      padding: 26px 24px;
+      border: 1px solid var(--c-border);
+    }
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--c-green);
+      color: #000;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .step-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--c-text-mute);
+      margin-bottom: 14px;
+    }
+    .step-desc .em { color: var(--c-text); font-weight: 600; }
+    .step-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 11px 18px;
+      background: var(--c-green-soft);
+      color: var(--c-green);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .step-note {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--c-border);
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--c-text-faint);
+    }
+
+    /* === Section: Review Guide === */
+    .checklist {
+      background: var(--c-surface);
+      border-radius: var(--r-lg);
+      padding: 22px 24px;
+      margin-bottom: 16px;
+      border: 1px solid var(--c-border);
+    }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .checklist li + li { border-top: 1px solid var(--c-border); }
+    .checklist li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--c-green);
+      color: #000;
+      font-size: 13px;
+      font-weight: 800;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .checklist li.must { font-weight: 700; color: var(--c-green); }
+    .review-example {
+      background: var(--c-surface-2);
+      border-radius: var(--r-md);
+      padding: 20px 22px;
+      border-left: 3px solid var(--c-green);
+    }
+    .review-example .label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--c-green);
+      margin-bottom: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .review-example .name {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--c-text);
+      margin-bottom: 8px;
+    }
+    .review-example .text {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--c-text-mute);
+    }
+
+    /* === Section: Rewards === */
+    .rewards-list { display: flex; flex-direction: column; gap: 12px; }
+    .reward-card {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--c-surface);
+      border-radius: var(--r-lg);
+      padding: 22px;
+      border: 1px solid var(--c-border);
+    }
+    .reward-card.grand {
+      background: linear-gradient(135deg, var(--c-green-soft), var(--c-surface) 70%);
+      border-color: var(--c-green);
+      box-shadow: 0 0 40px rgba(0,216,87,0.12);
+    }
+    .reward-emoji { font-size: 30px; flex-shrink: 0; }
+    .reward-info { flex: 1; }
+    .reward-rank {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-text-mute);
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+    .reward-card.grand .reward-rank { color: var(--c-green); }
+    .reward-prize {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .reward-count {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-text-mute);
+    }
+    .reward-note {
+      text-align: center;
+      margin-top: 22px;
+      padding: 18px;
+      background: var(--c-surface-2);
+      border-radius: var(--r-md);
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--c-text-mute);
+    }
+    .reward-note strong { color: var(--c-text); font-weight: 800; }
+
+    /* === Section: FAQ === */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      background: var(--c-surface);
+      border-radius: var(--r-md);
+      border: 1px solid var(--c-border);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px;
+    }
+    .faq-q .icon {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--c-text-faint);
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-q .icon { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 400px; }
+    .faq-a .inner {
+      padding: 0 20px 20px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--c-text-mute);
+    }
+
+    /* === Footer === */
+    .footer {
+      padding: 40px 24px 80px;
+      text-align: center;
+      border-top: 1px solid var(--c-border);
+    }
+    .footer-cta {
+      display: flex; gap: 8px; margin-bottom: 24px;
+    }
+    .footer-cta button {
+      flex: 1;
+      padding: 14px 0;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .footer-cta .primary {
+      background: var(--c-green);
+      color: #000;
+    }
+    .footer-cta .secondary {
+      background: var(--c-surface);
+      color: var(--c-text);
+      border: 1px solid var(--c-border);
+    }
+    .footer .notice {
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--c-text-faint);
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    .footer .cs {
+      font-size: 12px;
+      color: var(--c-text-faint);
+    }
+
+    /* === Sticky CTA === */
+    .sticky-cta {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 40;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: linear-gradient(180deg, transparent, rgba(13,13,14,0.95) 30%);
+      pointer-events: none;
+    }
+    .sticky-cta .inner {
+      max-width: 480px;
+      margin: 0 auto;
+      pointer-events: auto;
+    }
+    .sticky-cta button {
+      width: 100%;
+      padding: 16px;
+      background: var(--c-green);
+      color: #000;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(0,216,87,0.35);
+    }
+
+    /* === Branch Sheet === */
+    .sheet-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 90;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    .sheet-overlay.open { opacity: 1; pointer-events: auto; }
+    .sheet {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+      width: 100%;
+      max-width: 480px;
+      max-height: 75vh;
+      background: var(--c-surface);
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      z-index: 100;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .sheet.open { transform: translate(-50%, 0); }
+    .sheet-handle {
+      width: 36px; height: 4px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+    .sheet-header {
+      padding: 16px 24px 12px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .sheet-title {
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .sheet-close {
+      font-size: 22px;
+      color: var(--c-text-mute);
+      width: 32px; height: 32px;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .sheet-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px 24px calc(24px + env(safe-area-inset-bottom));
+    }
+    .branch-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 4px;
+      border-bottom: 1px solid var(--c-border);
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .branch-item:last-child { border-bottom: 0; }
+    .branch-item .arrow {
+      color: var(--c-green);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* === Ended State === */
+    body.ended .sticky-cta { display: none; }
+    .ended-banner {
+      display: none;
+      background: var(--c-surface);
+      border: 1px solid var(--c-green);
+      border-radius: var(--r-lg);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    body.ended .ended-banner { display: block; }
+    .ended-banner .title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--c-green);
+      margin-bottom: 8px;
+    }
+    .ended-banner .desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--c-text-mute);
+    }
+
+    @media (min-width: 481px) {
+      body { box-shadow: 0 0 60px rgba(0,0,0,0.5); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <img src="assets/logo.png" alt="버핏그라운드" />
+  </header>
+
+  <!-- ===== Section 1: Hero ===== -->
+  <section class="hero">
+    <div class="ended-banner">
+      <p class="title">이벤트가 종료되었습니다</p>
+      <p class="desc">진심 어린 리뷰를 보내주신 모든 분께 감사드립니다.<br/>당첨자는 2026.5.20 문자로 개별 안내드립니다.</p>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="assets/hero-photo.jpg" alt="버핏그라운드 트레이너 팀" class="hero-photo" />
+    </div>
+    <span class="hero-tag">스승의 날 기념</span>
+    <h1 class="hero-title">
+      나의 PT 트레이너<br />
+      <span class="green">자랑하기 EVENT</span>
+    </h1>
+    <p class="hero-period">2026. 05. 08 (금)<span class="dot">·</span>05. 15 (금)<span class="dot">·</span>7일간</p>
+    <p class="hero-sub">
+      버핏그라운드 PT 회원만을 위한 한정 이벤트.<br />
+      트레이너에게 진심 담긴 리뷰를 남겨주세요.<br />
+      추첨을 통해 <strong>네이버페이 포인트</strong>를 드립니다.
+    </p>
+    <button class="hero-cta" onclick="scrollToHow()">참여 방법 보기 →</button>
+  </section>
+
+  <!-- ===== Section 2: 왜 이 캠페인인가 ===== -->
+  <section>
+    <p class="section-eyebrow">Why this campaign</p>
+    <h2 class="section-title">
+      트레이너에게<br />
+      가장 큰 응원은,<br />
+      <span class="green">회원의 한 줄 리뷰입니다.</span>
+    </h2>
+    <p class="section-desc">
+      PT 수업의 진짜 가치를 가장 잘 아는 사람은<br />
+      함께 운동한 회원님이니까요.
+    </p>
+    <div class="anchor-card">
+      <p class="q">"트레이너님 덕분이에요."</p>
+      <p class="a">
+        이 한 줄이, 트레이너에게는<br />
+        어떤 보너스보다 큰 응원이 됩니다.
+      </p>
+    </div>
+    <div class="anchor-card">
+      <p class="q">진심 리뷰는 가장 직접적인 응원</p>
+      <p class="a">
+        네이버 리뷰 한 줄로 트레이너의<br />
+        커리어와 평판을 함께 만들어주세요.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Section 3: 사회적 증거 ===== -->
+  <section>
+    <p class="section-eyebrow">Real reviews</p>
+    <h2 class="section-title">
+      먼저 마음을 전한<br />
+      <span class="green">회원분들의 리뷰</span>
+    </h2>
+    <p class="section-desc">
+      버핏그라운드에 직접 남겨주신 네이버 플레이스 리뷰입니다.
+    </p>
+    <div class="proof-scroll">
+      <div class="proof-card">
+        <img src="assets/review-1.jpg" alt="실제 회원 리뷰 1" />
+      </div>
+      <div class="proof-card">
+        <img src="assets/review-2.jpg" alt="실제 회원 리뷰 2" />
+      </div>
+      <div class="proof-card">
+        <img src="assets/review-3.jpg" alt="실제 회원 리뷰 3" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Section 4: 참여 방법 (2-Step) ===== -->
+  <section id="how">
+    <p class="section-eyebrow">How to join</p>
+    <h2 class="section-title">
+      참여 방법은<br />
+      <span class="green">단 2단계로 끝나요</span>
+    </h2>
+    <p class="section-desc">3분이면 충분합니다. 천천히 따라와주세요.</p>
+    <div class="step-list">
+      <article class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title">네이버에서 리뷰 작성</h3>
+        <p class="step-desc">
+          버핏그라운드 PT 해당 지점 네이버 플레이스 <span class="em">'예약 탭'</span>에서<br />
+          담당 트레이너로 예약을 걸고, 이용 완료 처리 후<br />
+          리뷰를 작성해주세요. <span class="em">(가장 가까운 날짜/시간으로 진행)</span>
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="step-btn" onclick="openSheet('step1')">지점 찾기 →</button>
+          <a class="step-btn" href="https://butfitseoul.notion.site/PT-EVENT-3566c4cd1aa280e58437c48e587d944f" target="_blank" rel="noopener">참여 가이드 보기 →</a>
+        </div>
+        <p class="step-note">
+          ※ 네이버 플레이스의 방문자 예약 절차를 거쳐야 리뷰를 남길 수 있어요.
+        </p>
+      </article>
+      <article class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title">구글폼에 캡처본 제출</h3>
+        <p class="step-desc">
+          작성한 리뷰 화면을 캡처해서<br />
+          <span class="em">구글폼에 제출</span>하면 끝!
+        </p>
+        <button class="step-btn" onclick="openForm('step2')">구글폼 열기 →</button>
+        <p class="step-note">
+          ※ 추첨 대상 확인을 위해 구글폼 제출이 꼭 필요해요.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Section 5: 보상 ===== -->
+  <section>
+    <p class="section-eyebrow">Rewards</p>
+    <h2 class="section-title">
+      추첨을 통해<br />
+      <span class="green">선물을 드려요</span>
+    </h2>
+    <p class="section-desc">
+      진심 담긴 리뷰를 남겨주신 분들 중<br />
+      추첨하여 네이버페이 포인트를 드립니다.
+    </p>
+    <div class="rewards-list">
+      <div class="reward-card grand">
+        <div class="reward-emoji">🏆</div>
+        <div class="reward-info">
+          <div class="reward-rank">대상</div>
+          <div class="reward-prize">네이버페이 10만원</div>
+        </div>
+        <div class="reward-count">1명</div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-emoji">🥇</div>
+        <div class="reward-info">
+          <div class="reward-rank">최우수상</div>
+          <div class="reward-prize">네이버페이 5만원</div>
+        </div>
+        <div class="reward-count">3명</div>
+      </div>
+      <div class="reward-card">
+        <div class="reward-emoji">🥈</div>
+        <div class="reward-info">
+          <div class="reward-rank">우수상</div>
+          <div class="reward-prize">네이버페이 1만원</div>
+        </div>
+        <div class="reward-count">5명</div>
+      </div>
+    </div>
+    <p class="reward-note">
+      <strong>발표일 · 2026년 5월 20일 (수)</strong><br />
+      당첨자분들께는 문자로 개별 안내드립니다.
+    </p>
+  </section>
+
+  <!-- ===== Section 6: 리뷰 가이드 ===== -->
+  <section>
+    <p class="section-eyebrow">Tips for higher chance</p>
+    <h2 class="section-title">
+      이렇게 작성하면<br />
+      <span class="green">당첨 확률이 올라가요</span>
+    </h2>
+    <p class="section-desc">아래 3가지 조건을 모두 갖추면 당첨 확률이 가장 높습니다.</p>
+    <ul class="checklist">
+      <li class="must"><span>운동 사진 또는 영상 1장 이상 첨부 (필수)</span></li>
+      <li><span>구체적인 변화나 경험 (예: "8개월간 10kg 감량")</span></li>
+      <li><span>100자 이상의 진정성 있는 후기</span></li>
+    </ul>
+    <div class="review-example">
+      <p class="label">실제 회원 리뷰 예시</p>
+      <p class="name">박소현 트레이너 / 회원 후기</p>
+      <p class="text">
+        "운동 목적에 맞는 목표 설정, 꾸준하고 부담없는 식단 관리, 다양하고 자세한 운동 방법 설명, 적극적인 동기부여 덕분에 약 8개월간 체지방량 10kg 감량했습니다. 허리, 어깨, 무릎 통증으로 운동을 혼자할 때 고생을 많이 했는데 도움을 많이 받아 운동하는 습관도 생기고 체중 감량도 이뤄낼 수 있었어요."
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Section 7: FAQ ===== -->
+  <section>
+    <p class="section-eyebrow">FAQ</p>
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <div class="faq-list" id="faq-list">
+      <article class="faq-item">
+        <button class="faq-q" type="button">
+          <span>버핏그라운드 회원이 아니어도 참여할 수 있나요?</span>
+          <span class="icon">▼</span>
+        </button>
+        <div class="faq-a"><p class="inner">현재 PT 수업을 진행 중인 회원님만 참여 가능합니다. 진심 어린 후기를 받기 위해 실제 수업 경험이 있는 분들로 한정하고 있어요.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-q" type="button">
+          <span>리뷰 작성 시 사진/영상이 꼭 필요한가요?</span>
+          <span class="icon">▼</span>
+        </button>
+        <div class="faq-a"><p class="inner">네, 운동 사진이나 영상을 1장 이상 첨부해주셔야 추첨 대상에 포함됩니다. 트레이너의 얼굴이 직접 노출되지 않아도 괜찮아요.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-q" type="button">
+          <span>왜 방문자 예약을 먼저 해야 하나요?</span>
+          <span class="icon">▼</span>
+        </button>
+        <div class="faq-a"><p class="inner">네이버 플레이스에 후기를 남기려면 '예약 → 이용 완료' 인증이 필요해요. 네이버 정책에 따른 정상적인 절차이며, 본인 트레이너의 가장 가까운 시간대로 예약하시면 됩니다.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-q" type="button">
+          <span>당첨자 발표는 언제, 어떻게 안내되나요?</span>
+          <span class="icon">▼</span>
+        </button>
+        <div class="faq-a"><p class="inner">2026년 5월 20일(수)에 당첨자분들께만 <strong style="color:var(--c-green)">문자로 개별 안내</strong>드립니다. 별도 공지나 단톡방 운영은 하지 않아요.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-q" type="button">
+          <span>리뷰를 여러 개 작성해도 되나요?</span>
+          <span class="icon">▼</span>
+        </button>
+        <div class="faq-a"><p class="inner">1인 1회 응모만 가능합니다. 여러 트레이너에게 감사 인사를 전하고 싶다면, 가장 마음이 가는 한 분을 선택해주세요.</p></div>
+      </article>
+      <article class="faq-item">
+        <button class="faq-q" type="button">
+          <span>이벤트 종료 후에도 작성한 리뷰가 노출되나요?</span>
+          <span class="icon">▼</span>
+        </button>
+        <div class="faq-a"><p class="inner">네, 직접 작성하신 네이버 리뷰는 이벤트 종료 후에도 본인이 삭제하시기 전까지 계속 노출됩니다.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer-cta">
+      <button class="secondary" onclick="openSheet('footer')">지점 찾기</button>
+      <button class="primary" onclick="openForm('footer')">구글폼 열기</button>
+    </div>
+    <p class="notice">
+      · 본 이벤트는 버핏그라운드 PT 수업 진행 중인 회원님 대상입니다.<br />
+      · 부적절한 내용 또는 허위 작성이 확인될 경우 당첨이 취소될 수 있습니다.<br />
+      · 경품(네이버페이 포인트)은 5월 20일 이후 순차적으로 발송됩니다.
+    </p>
+  </footer>
+
+  <!-- ===== Sticky CTA ===== -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div class="inner">
+      <button id="sticky-btn" onclick="handleStickyClick()">지금 참여하기</button>
+    </div>
+  </div>
+
+  <!-- ===== Branch Sheet ===== -->
+  <div class="sheet-overlay" id="sheet-overlay" onclick="closeSheet()"></div>
+  <aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title-text">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">
+      <span class="sheet-title" id="sheet-title-text">내 지점 선택하기</span>
+      <button class="sheet-close" onclick="closeSheet()" aria-label="닫기">✕</button>
+    </div>
+    <div class="sheet-body" id="branch-list"></div>
+  </aside>
+
+  <script>
+    /* ---- CONFIG ---- */
+    const CONFIG = {
+      EVENT_END: new Date('2026-05-15T23:59:59+09:00'),
+      GOOGLE_FORM_URL: 'https://forms.gle/C7Pd6vvmfvymrcMHA',
+      BRANCHES: [
+        { name: '합정',       url: 'https://naver.me/5im4AdJU' },
+        { name: '역삼GFC',    url: 'https://naver.me/FIcgXpSq' },
+        { name: '역삼ARC',    url: 'https://naver.me/GpCzPxqM' },
+        { name: '판교',       url: 'https://naver.me/FKGZSu7n' },
+        { name: '판교벤처타운', url: 'https://naver.me/FdqQhGFh' },
+        { name: '마곡',       url: 'https://naver.me/Ig4TQfV2' },
+        { name: '도곡',       url: 'https://naver.me/G3vsIMzB' },
+        { name: '한티역',     url: 'https://naver.me/52a9ruWy' },
+        { name: '광화문',     url: 'https://naver.me/Gi0nff6r' },
+        { name: '삼성',       url: 'https://naver.me/FbV9QLei' },
+        { name: '가산',       url: 'https://naver.me/Ffsibf6b' },
+        { name: '강변',       url: 'https://naver.me/GNJrgFS2' },
+        { name: '논현',       url: 'https://naver.me/FQVvcqAd' },
+        { name: '신도림',     url: 'https://naver.me/xjg8CReQ' },
+      ],
+    };
+
+    /* ---- Preview override ---- */
+    const PREVIEW = new URLSearchParams(window.location.search).get('preview');
+    function isEnded() {
+      if (PREVIEW === 'active') return false;
+      if (PREVIEW === 'ended')  return true;
+      return new Date() > CONFIG.EVENT_END;
+    }
+
+    /* ---- UTM ---- */
+    function getUTM() {
+      const p = new URLSearchParams(window.location.search);
+      return {
+        utm_source:   p.get('utm_source')   || 'direct',
+        utm_medium:   p.get('utm_medium')   || 'none',
+        utm_campaign: p.get('utm_campaign') || 'teachers_day_2026',
+        utm_content:  p.get('utm_content')  || 'none',
+      };
+    }
+    gtag('event', 'lp_view', getUTM());
+
+    /* ---- Branch Sheet ---- */
+    const branchList = document.getElementById('branch-list');
+    CONFIG.BRANCHES.forEach((b) => {
+      const a = document.createElement('a');
+      a.href = b.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.className = 'branch-item';
+      a.innerHTML = `<span>${b.name}</span><span class="arrow">리뷰 쓰러 가기 →</span>`;
+      a.addEventListener('click', () => {
+        gtag('event', 'cta_click_naver_list', { location: 'modal', branch: b.name });
+      });
+      branchList.appendChild(a);
+    });
+    function openSheet(loc) {
+      document.getElementById('sheet-overlay').classList.add('open');
+      document.getElementById('sheet').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      gtag('event', 'cta_click_naver_list', { location: loc || 'open_sheet' });
+    }
+    function closeSheet() {
+      document.getElementById('sheet-overlay').classList.remove('open');
+      document.getElementById('sheet').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ---- FAQ Accordion ---- */
+    document.querySelectorAll('.faq-item').forEach((item, idx) => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        const open = item.classList.toggle('open');
+        if (open) gtag('event', 'faq_open', { question_index: idx });
+      });
+    });
+
+    /* ---- Form & Scroll ---- */
+    function scrollToHow() {
+      document.getElementById('how').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function openForm(loc) {
+      gtag('event', 'cta_click_google_form', { location: loc });
+      window.open(CONFIG.GOOGLE_FORM_URL, '_blank', 'noopener');
+    }
+
+    /* ---- Sticky CTA branch ---- */
+    function handleStickyClick() {
+      if (isEnded()) return;
+      const howSection = document.getElementById('how');
+      const howTop = howSection.getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY < howTop - 100) {
+        scrollToHow();
+        gtag('event', 'cta_click_sticky', { action: 'scroll_to_how' });
+      } else {
+        openForm('sticky');
+      }
+    }
+
+    /* ---- Scroll Depth ---- */
+    const tracked = new Set();
+    window.addEventListener('scroll', () => {
+      const pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+      [25, 50, 75, 100].forEach((t) => {
+        if (pct >= t && !tracked.has(t)) {
+          tracked.add(t);
+          gtag('event', 'scroll_depth', { percent: t });
+        }
+      });
+    }, { passive: true });
+
+    /* ---- Ended State ---- */
+    if (isEnded()) {
+      document.body.classList.add('ended');
+      const heroCta = document.querySelector('.hero-cta');
+      if (heroCta) heroCta.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
